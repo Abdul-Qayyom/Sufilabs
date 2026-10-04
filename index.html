@@ -5,154 +5,525 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SufiLabs - Creative Web Design</title>
+    <title>SufiLabs | Digital Creativity</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f0e6;
-            color: #222;
-            line-height: 1.6;
+            background: #080b18;
+            color: white;
         }
 
-        header {
-            text-align: center;
-            padding: 80px 20px;
-            background-color: #e8dcc8;
-        }
-
-        header h1 {
-            font-size: 48px;
-            margin: 0 0 10px;
-        }
-
-        header p {
-            font-size: 20px;
-        }
+        /* NAVBAR */
 
         nav {
-            text-align: center;
-            padding: 18px;
-            background-color: #222;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: rgba(8, 11, 24, 0.95);
+            border-bottom: 1px solid #242b4a;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #7c5cff;
         }
 
         nav a {
+            color: #dce1ff;
+            text-decoration: none;
+            margin-left: 22px;
+        }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at 20% 20%, #5b21b6 0, transparent 30%),
+                radial-gradient(circle at 80% 30%, #006d77 0, transparent 28%),
+                linear-gradient(135deg, #090d22, #15102e);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .small-title {
+            color: #00e5ff;
+            font-size: 17px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 68px;
+            margin: 15px 0;
+            line-height: 1.05;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #7c5cff, #00e5ff, #ff4ecd);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #cbd2f5;
+            font-size: 20px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 32px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #7c5cff, #00c6ff);
             color: white;
             text-decoration: none;
-            margin: 0 12px;
-            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 0 30px rgba(0, 198, 255, 0.3);
         }
+
+        .button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
 
         section {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 35px 25px;
-            background-color: white;
-            border-radius: 15px;
+            padding: 80px 7%;
         }
 
-        h2 {
+        .section-title {
             text-align: center;
-            font-size: 30px;
-            margin-top: 0;
+            margin-bottom: 45px;
         }
 
-        .hero-button {
-            display: inline-block;
-            background-color: #222;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-top: 15px;
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
         }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
+        .section-title p {
+            color: #9da7cc;
+        }
+
+        /* SERVICES */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: auto;
         }
 
         .card {
-            width: 200px;
-            padding: 20px;
-            background-color: #f5f0e6;
-            border-radius: 12px;
+            padding: 30px 20px;
             text-align: center;
+            background: linear-gradient(145deg, #151b38, #0e1329);
+            border: 1px solid #2d3763;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #00e5ff;
+            box-shadow: 0 15px 40px rgba(0, 229, 255, 0.12);
+        }
+
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
-            margin-top: 0;
+            margin: 10px 0;
         }
+
+        .card p {
+            color: #9da7cc;
+            font-size: 15px;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 950px;
+            margin: auto;
+            text-align: center;
+            background: linear-gradient(135deg, #171334, #101b35);
+            border-radius: 25px;
+            border: 1px solid #303967;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: 15px auto;
+            color: #c5cceb;
+            font-size: 18px;
+        }
+
+        /* PORTFOLIO */
+
+        .projects {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project {
+            padding: 35px 20px;
+            text-align: center;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #211342, #102b42);
+            border: 1px solid #34456c;
+        }
+
+        .project h3 {
+            color: #00e5ff;
+        }
+
+        .project p {
+            color: #b7c0df;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+            background: linear-gradient(135deg, #40145f, #073f54);
+        }
+
+        .contact h2 {
+            font-size: 40px;
+        }
+
+        .contact p {
+            color: #d7dcf5;
+            font-size: 18px;
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
             padding: 30px;
-            margin-top: 40px;
-            background-color: #222;
-            color: white;
+            background: #050711;
+            color: #7f89aa;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 580px;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
-    <header>
-        <h1>SufiLabs</h1>
-
-        <p>Learn. Create. Innovate.</p>
-
-        <p>Creative Web Design & Digital Solutions</p>
-
-        <a class="hero-button" href="#services">Get Started</a>
-    </header>
-
+    <!-- NAVIGATION -->
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+
+        <div class="logo">
+            SufiLabs
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+
     </nav>
 
 
-    <section>
-        <h2>Welcome to SufiLabs</h2>
+    <!-- HERO -->
 
-        <p>
-            SufiLabs is a creative web design project focused on
-            building simple, useful and user-friendly websites.
-        </p>
+    <header class="hero">
 
-        <p>
-            We learn, create and innovate with technology.
-        </p>
-    </section>
+        <div class="hero-content">
 
+            <div class="small-title">
+                Welcome to SufiLabs
+            </div>
+
+            <h1>
+                Build Something
+                <span class="gradient-text">Amazing.</span>
+            </h1>
+
+            <p>
+                Creative web design, modern ideas and digital
+                experiences built with passion.
+            </p>
+
+            <a class="button" href="#services">
+                Explore SufiLabs →
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- SERVICES -->
 
     <section id="services">
 
-        <h2>My Services</h2>
+        <div class="section-title">
 
-        <div class="services">
+            <h2>What I Do</h2>
+
+            <p>
+                Simple ideas transformed into modern websites.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
 
             <div class="card">
-                <h3>Business Websites</h3>
-                <p>Simple websites for businesses.</p>
+
+                <div class="icon">💻</div>
+
+                <h3>Web Design</h3>
+
+                <p>
+                    Clean and modern website designs.
+                </p>
+
             </div>
 
-            <div class="card">
-                <h3>Personal Websites</h3>
-                <p>Clean websites for personal use.</p>
-            </div>
 
             <div class="card">
-                <h3>Mobile Friendly</h3>
-                <p>Websites that work well on phones.</p>
+
+                <div class="icon">📱</div>
+
+                <h3>Mobile Design</h3>
+
+                <p>
+                    Websites that look great on phones.
+                </p>
+
             </div>
 
+
             <div class="card">
-                <h3>HTML & CSS</h
+
+                <div class="icon">⚡</div>
+
+                <h3>Fast Websites</h3>
+
+                <p>
+                    Simple and lightweight web pages.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎨</div>
+
+                <h3>Creative Ideas</h3>
+
+                <p>
+                    Fresh ideas for digital projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section>
+
+        <div class="about">
+
+            <div class="section-title">
+
+                <h2>About SufiLabs</h2>
+
+            </div>
+
+            <p>
+                SufiLabs is my journey into web design and technology.
+            </p>
+
+            <p>
+                I am learning HTML, CSS and modern web design
+                while building real projects step by step.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- PORTFOLIO -->
+
+    <section id="portfolio">
+
+        <div class="section-title">
+
+            <h2>My Portfolio</h2>
+
+            <p>
+                Projects created with SufiLabs.
+            </p>
+
+        </div>
+
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Business Website</h3>
+
+                <p>
+                    A modern website concept for a business.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Personal Website</h3>
+
+                <p>
+                    A clean personal web project.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>SufiLabs</h3>
+
+                <p>
+                    My own web design project.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Let's Create Something</h2>
+
+        <p>
+            Have an idea? SufiLabs is ready to grow.
+        </p>
+
+        <a class="button" href="About.html">
+            Learn More →
+        </a>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        © 2026 SufiLabs — Learn. Create. Innovate.
+
+    </footer>
+
+
+</body>
+
+</html>
