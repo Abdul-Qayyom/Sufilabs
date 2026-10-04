@@ -8,130 +8,336 @@
     <title>About SufiLabs</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-            line-height: 1.6;
+        * {
+            box-sizing: border-box;
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
+        html {
+            scroll-behavior: smooth;
         }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080b18;
+            color: white;
+        }
+
+        /* NAVIGATION */
 
         nav {
-            text-align: center;
-            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 7%;
+            background: rgba(8, 11, 24, 0.95);
+            border-bottom: 1px solid #242b4a;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #7c5cff;
         }
 
         nav a {
+            color: #dce1ff;
             text-decoration: none;
-            margin: 0 10px;
+            margin-left: 22px;
         }
+
+        nav a:hover {
+            color: #00e5ff;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 20% 20%, #5b21b6 0, transparent 30%),
+                radial-gradient(circle at 80% 30%, #006d77 0, transparent 28%),
+                linear-gradient(135deg, #090d22, #15102e);
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin: 0 0 15px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #7c5cff, #00e5ff, #ff4ecd);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #cbd2f5;
+            font-size: 19px;
+        }
+
+        /* MAIN */
 
         section {
-            background-color: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            text-align: center;
+            max-width: 1000px;
+            margin: 35px auto;
+            padding: 45px 30px;
+            background: linear-gradient(145deg, #151b38, #0e1329);
+            border: 1px solid #2d3763;
+            border-radius: 22px;
         }
 
         h2 {
+            text-align: center;
+            font-size: 35px;
+            color: #00e5ff;
             margin-top: 0;
         }
 
-        ul {
-            padding-left: 25px;
+        p {
+            color: #c5cceb;
+            font-size: 17px;
+            line-height: 1.8;
         }
+
+        /* SKILLS */
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .skill {
+            padding: 22px;
+            background: #192344;
+            border: 1px solid #354475;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .skill h3 {
+            margin: 5px 0;
+            color: white;
+        }
+
+        .skill p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        /* BUTTON */
+
+        .button-box {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #7c5cff, #00c6ff);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
-            margin-top: 30px;
-            padding: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            background: #050711;
+            color: #7f89aa;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 80px 20px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                margin: 20px 12px;
+                padding: 35px 20px;
+            }
         }
     </style>
 </head>
 
+
 <body>
 
-    <header>
-        <h1>SufiLabs</h1>
-        <p>Simple Ideas. Better Websites.</p>
-    </header>
+    <!-- NAVIGATION -->
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
+
+        <div class="logo">
+            SufiLabs
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#portfolio">Portfolio</a>
+            <a href="index.html#contact">Contact</a>
+        </div>
+
     </nav>
 
+
+    <!-- HERO -->
+
+    <header class="hero">
+
+        <h1>
+            About <span class="gradient-text">SufiLabs</span>
+        </h1>
+
+        <p>
+            A journey of learning, creativity and modern web design.
+        </p>
+
+    </header>
+
+
+    <!-- ABOUT -->
+
     <section>
-        <h2>About SufiLabs</h2>
+
+        <h2>Who We Are</h2>
 
         <p>
-            Welcome to SufiLabs. SufiLabs is a web design project
-            focused on creating simple, useful and user-friendly websites.
+            SufiLabs is a creative web design project focused on
+            building simple, modern and user-friendly websites.
         </p>
 
         <p>
-            I am learning HTML and Web Design and building SufiLabs
-            step by step as I improve my skills.
+            SufiLabs started as a learning journey and is growing
+            step by step with every new project.
         </p>
+
     </section>
 
+
+    <!-- MY STORY -->
+
     <section>
+
+        <h2>My Story</h2>
+
+        <p>
+            Hello, I am Abdul Qayyom Chishti.
+        </p>
+
+        <p>
+            I am learning HTML, CSS and web design from the ground up.
+            SufiLabs is the place where I practice my skills and
+            turn ideas into real websites.
+        </p>
+
+        <p>
+            The goal is simple: learn new things, create useful
+            websites and keep improving.
+        </p>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section>
+
         <h2>My Skills</h2>
 
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>Web Design</li>
-            <li>Responsive Web Design</li>
-        </ul>
+        <div class="skills">
+
+            <div class="skill">
+                <h3>💻 HTML</h3>
+                <p>Building the structure of websites.</p>
+            </div>
+
+            <div class="skill">
+                <h3>🎨 CSS</h3>
+                <p>Creating colors, layouts and designs.</p>
+            </div>
+
+            <div class="skill">
+                <h3>📱 Responsive Design</h3>
+                <p>Making websites work on mobile devices.</p>
+            </div>
+
+            <div class="skill">
+                <h3>⚡ Web Design</h3>
+                <p>Creating clean and modern web experiences.</p>
+            </div>
+
+        </div>
+
     </section>
 
-    <section>
-        <h2>My Services</h2>
 
-        <ul>
-            <li>Simple Business Websites</li>
-            <li>Personal Websites</li>
-            <li>Mobile-Friendly Websites</li>
-            <li>Basic HTML & CSS Websites</li>
-        </ul>
-    </section>
+    <!-- VISION -->
 
     <section>
-        <h2>My Portfolio</h2>
+
+        <h2>Our Vision</h2>
 
         <p>
-            Welcome to my portfolio. Here I will showcase
-            the websites and projects I create while learning.
+            SufiLabs aims to grow into a place where creative ideas
+            become useful digital experiences.
         </p>
-
-        <ul>
-            <li>Business Website</li>
-            <li>Personal Website</li>
-            <li>Mobile-Friendly Website</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Contact</h2>
 
         <p>
-            If you would like to know more about SufiLabs,
-            feel free to get in touch.
+            Learn. Create. Innovate.
         </p>
+
+        <div class="button-box">
+
+            <a class="button" href="index.html">
+                ← Back to Home
+            </a>
+
+        </div>
+
     </section>
+
+
+    <!-- FOOTER -->
 
     <footer>
-        <p>© 2026 SufiLabs. All rights reserved.</p>
+
+        © 2026 SufiLabs — Learn. Create. Innovate.
+
     </footer>
 
 </body>
