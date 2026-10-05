@@ -1,4 +1,20 @@
 <!DOCTYPE html>
+<script>
+const USERNAME = "Abdul Qayyom";
+const PASSWORD = "Abdul@";
+
+const login = prompt("SufiLabs Login\nUsername:");
+
+if (login !== USERNAME) {
+    document.body.innerHTML = "<h2>Access Denied</h2>";
+} else {
+    const password = prompt("Password:");
+
+    if (password !== PASSWORD) {
+        document.body.innerHTML = "<h2>Wrong Password</h2>";
+    }
+}
+</script>
 <html lang="en">
 
 <head>
